@@ -8,6 +8,7 @@ public class player : MonoBehaviour
     private float input;
     Rigidbody2D rb;
     Animator anim;
+    public int health;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -40,5 +41,13 @@ public class player : MonoBehaviour
 
         input=Input.GetAxisRaw("Horizontal");
         rb.linearVelocity=new Vector2(input*speed,rb.linearVelocity.y);
+    }
+    public void takeDamage(int damageamount)
+    {
+        health-=damageamount;
+        if(health<=0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

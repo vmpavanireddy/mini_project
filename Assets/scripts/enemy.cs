@@ -5,10 +5,15 @@ public class enemy : MonoBehaviour
     public float minspeed;
     public float maxspeed;
     float speed;
+
+    public int damage;
+    player playerscript;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         speed=Random.Range(minspeed,maxspeed);
+        playerscript=GameObject.FindGameObjectWithTag("Player").GetComponent<player>();
     }
 
     // Update is called once per frame
@@ -21,6 +26,7 @@ public class enemy : MonoBehaviour
         if(hitobject.tag=="Player")
         {
             print("player hit");
+            playerscript.takeDamage(damage);
         }
     }
 }

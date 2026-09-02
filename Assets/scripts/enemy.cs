@@ -16,4 +16,11 @@ public class enemy : MonoBehaviour
     {
         transform.Translate(Vector2.down*speed*Time.deltaTime);
     }
+    void OnTriggerEnter2D(Collider2D hitobject)
+    {
+        if(hitobject.tag=="Player")
+        {
+            print("player hit");
+        }
+    }
 }

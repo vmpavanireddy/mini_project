@@ -15,7 +15,9 @@ public class player : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
         float input=Input.GetAxisRaw("Horizontal");
+            Debug.Log(input);
         rb.linearVelocity=new Vector2(input*speed,rb.linearVelocity.y);
     }
 }

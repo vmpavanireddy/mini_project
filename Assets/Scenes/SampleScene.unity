@@ -761,6 +761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 874a873d5c31a4695973adf0c484de46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::player
+  speed: 8
 --- !u!4 &1204525325
 Transform:
   m_ObjectHideFlags: 0
@@ -862,7 +863,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.11121413, y: 0.1417663, z: 0.008229468, w: 0.9835986}
   m_LocalPosition: {x: -3.59, y: -3.26, z: 0.02}
-  m_LocalScale: {x: 0.038019918, y: 0.037223797, z: 0.048544344}
+  m_LocalScale: {x: 0.015168427, y: 0.015666116, z: 0.019367252}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 965038055}

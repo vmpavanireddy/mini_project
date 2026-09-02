@@ -39,7 +39,7 @@ public class player : MonoBehaviour
     {
 
         input=Input.GetAxisRaw("Horizontal");
-            Debug.Log(input);
+        Debug.Log(input);
         rb.linearVelocity=new Vector2(input*speed,rb.linearVelocity.y);
     }
 }

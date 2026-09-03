@@ -27,6 +27,11 @@ public class enemy : MonoBehaviour
         {
             print("player hit");
             playerscript.takeDamage(damage);
+            Destroy(gameObject);
+        }
+        if(hitobject.tag=="ground")
+        {
+            Destroy(gameObject);
         }
     }
 }

@@ -5,15 +5,18 @@ using UnityEngine.UI;
 
 public class player : MonoBehaviour
 {
+    public GameObject losepanel;
     public Text healthtext;
     public float speed;
     private float input;
     Rigidbody2D rb;
     Animator anim;
+    AudioSource audiosource;
     public int health;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        audiosource=GetComponent<AudioSource>();
         anim=GetComponent<Animator>();
         rb=GetComponent<Rigidbody2D>();
         healthtext.text=health.ToString();
@@ -47,10 +50,12 @@ public class player : MonoBehaviour
     }
     public void takeDamage(int damageamount)
     {
+        audiosource.Play();
         health-=damageamount;
         healthtext.text=health.ToString();
         if(health<=0)
         {
+            losepanel.SetActive(true);
             Destroy(gameObject);
         }
     }

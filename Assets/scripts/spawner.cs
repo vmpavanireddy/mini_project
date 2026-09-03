@@ -2,15 +2,35 @@ using UnityEngine;
 
 public class spawner : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public Transform[] spawnpoints;
+    public GameObject[] enemies;
+
+    private float timebtwspawn;
+    public float starttimebtwspawn;
+
+    public float mintimebtwspawn;
+    public float decreasetime;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(timebtwspawn<=0)
+        {
+            Transform randspawnpoint=spawnpoints[Random.Range(0,spawnpoints.Length)];
+            GameObject randenemy=enemies[Random.Range(0,enemies.Length)];
+            Instantiate(randenemy,randspawnpoint.position,Quaternion.identity);
+            
+            if(starttimebtwspawn>mintimebtwspawn)
+            {
+                starttimebtwspawn-=decreasetime;
+            }
+            
+            
+            timebtwspawn=starttimebtwspawn;
+        }
+        else
+        {
+            timebtwspawn-=Time.deltaTime;
+        }
     }
 }

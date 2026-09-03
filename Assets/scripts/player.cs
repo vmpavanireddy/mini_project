@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class player : MonoBehaviour
 {
+    public Text healthtext;
     public float speed;
     private float input;
     Rigidbody2D rb;
@@ -14,6 +16,7 @@ public class player : MonoBehaviour
     {
         anim=GetComponent<Animator>();
         rb=GetComponent<Rigidbody2D>();
+        healthtext.text=health.ToString();
     }
     private void Update()
     {
@@ -45,6 +48,7 @@ public class player : MonoBehaviour
     public void takeDamage(int damageamount)
     {
         health-=damageamount;
+        healthtext.text=health.ToString();
         if(health<=0)
         {
             Destroy(gameObject);

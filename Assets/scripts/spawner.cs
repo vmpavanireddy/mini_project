@@ -11,26 +11,32 @@ public class spawner : MonoBehaviour
     public float mintimebtwspawn;
     public float decreasetime;
 
+    public GameObject player;
+
     // Update is called once per frame
     void Update()
     {
-        if(timebtwspawn<=0)
+        if (player != null)
         {
-            Transform randspawnpoint=spawnpoints[Random.Range(0,spawnpoints.Length)];
-            GameObject randenemy=enemies[Random.Range(0,enemies.Length)];
-            Instantiate(randenemy,randspawnpoint.position,Quaternion.identity);
-            
-            if(starttimebtwspawn>mintimebtwspawn)
+            if (timebtwspawn <= 0)
             {
-                starttimebtwspawn-=decreasetime;
+                Transform randspawnpoint = spawnpoints[Random.Range(0, spawnpoints.Length)];
+                GameObject randenemy = enemies[Random.Range(0, enemies.Length)];
+                Instantiate(randenemy, randspawnpoint.position, Quaternion.identity);
+
+                if (starttimebtwspawn > mintimebtwspawn)
+                {
+                    starttimebtwspawn -= decreasetime;
+                }
+
+
+                timebtwspawn = starttimebtwspawn;
             }
-            
-            
-            timebtwspawn=starttimebtwspawn;
-        }
-        else
-        {
-            timebtwspawn-=Time.deltaTime;
+            else
+            {
+                timebtwspawn -= Time.deltaTime;
+            }
         }
     }
 }
+

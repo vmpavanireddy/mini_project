@@ -8,6 +8,7 @@ public class enemy : MonoBehaviour
 
     public int damage;
     player playerscript;
+    public GameObject effcts;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,10 +28,12 @@ public class enemy : MonoBehaviour
         {
             print("player hit");
             playerscript.takeDamage(damage);
+            Instantiate(effcts,transform.position,Quaternion.identity);
             Destroy(gameObject);
         }
         if(hitobject.tag=="ground")
         {
+            Instantiate(effcts,transform.position,Quaternion.identity);
             Destroy(gameObject);
         }
     }

@@ -7,7 +7,7 @@ The project gave me hands-on experience with Unity's workflow and core gameplay 
 ## 🎯 Gameplay
 
 Survive as long as possible by avoiding falling hazards and using the dash mechanic at the right time.
-
+![Splashy Adventures](./media/splashy.png)
 ### Key Features
 - Player movement
 - Dash mechanics
